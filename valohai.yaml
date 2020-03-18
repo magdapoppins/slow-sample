@@ -6,7 +6,13 @@
     command: echo 'hello'
 
 - endpoint:
-    name: greet
+    name: puppies
+    image: python:3.6
+    port: 8000
+    server-command: python -m wsgiref.simple_server
+
+- endpoint:
+    name: kittens
     image: python:3.6
     port: 8000
     server-command: python -m wsgiref.simple_server
