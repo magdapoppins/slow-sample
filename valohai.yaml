@@ -1,0 +1,12 @@
+---
+
+- step:
+    name: hello
+    image: python:3.6
+    command: echo 'hello'
+
+- endpoint:
+    name: greet
+    image: python:3.6
+    port: 8000
+    server-command: python -m wsgiref.simple_server
