@@ -21,8 +21,7 @@ def read_image_from_wsgi_request(environ):
 
 
 def predict(environ, start_response):
-    raise Exception
-    #return True
+    return True
 
 
 predict = DebuggedApplication(predict)
