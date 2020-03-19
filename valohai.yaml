@@ -19,6 +19,6 @@
 
 - endpoint:
     name: no-good
-    image: python:36
+    image: python:3.6
     port: 8000
-    server-command: python -m wsgiref.simple_server
+    server-command: deploy:predict
