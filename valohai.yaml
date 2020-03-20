@@ -21,4 +21,4 @@
     name: no-good
     image: python:3.6
     port: 8000
-    server-command: deploy:predict
+    wsgi: deploy:predict

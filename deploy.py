@@ -1,27 +1,10 @@
-import json
-
-from PIL import Image
 from werkzeug.debug import DebuggedApplication
 from werkzeug.wrappers import Request, Response
 
-from tf_mnist.predict import Predictor
-
 predictor = None
 
-
-def read_image_from_wsgi_request(environ):
-    request = Request(environ)
-    if not request.files:
-        return None
-    file_key = list(request.files.keys())[0]
-    file = request.files.get(file_key)
-    img = Image.open(file.stream)
-    img.load()
-    return img
-
-
 def predict(environ, start_response):
-    return True
+    return Response('no file uploaded', 400)(environ, start_response)
 
 
 predict = DebuggedApplication(predict)
